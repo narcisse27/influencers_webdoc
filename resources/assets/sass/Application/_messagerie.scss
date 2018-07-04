@@ -1,0 +1,150 @@
+
+.messagerie-wrap{
+  width: 400px;
+  height: 600px;
+  background-color: grey;
+  border: 1px solid grey;
+}
+.messagerie-header{
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  .title{
+     width: 70%;
+     height: 100%;
+     float: left;
+     h3{
+       text-align: left;
+       font-size: 24px;
+       line-height: 28px;
+       vertical-align: middle;
+       margin: 0px;
+       padding: 12px 0px 0px 8px;
+     }
+  }
+}
+.icons{
+  width: 25%;
+  height: 100%;
+  float: left;
+  padding-right: 5%;
+  .icon{
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    float: right;
+    margin: 12px 2px 2px 2px;
+  }
+}
+.messagerie-body{
+  width: 92%;
+  height: 530px;
+  margin: 2%;
+  float: left;
+  border-radius: 1%;
+  background-color: white;
+  padding: 2%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  display: flex; /* or inline-flex */
+  flex-direction:column-reverse;
+}
+.message-wrap{
+  float: left;
+  width: 100%;
+  height: auto;
+  margin-bottom: 5px;
+  animation: messageAppear 0.3s ease-in;
+}
+
+.message {
+  margin: 2px;
+  padding: 5px;
+  min-height: 20px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  &.sended{
+    max-width: 70%;
+    float: right;
+    background-color: grey;
+    border: 1px solid grey;
+    animation: sendedAppear 0.3s ease-in-out;
+  }
+  &.tapping {
+    width: 60px;
+    height: 28px;
+    background-color: white;
+    border: 1px solid black;
+  }
+  &.appearing{
+    width: 20px;
+    height: 20px;
+  }
+  &.recieved{
+    max-width: 70%;
+    float: left;
+    border: 1px solid grey;
+    animation: recievedAppear 0.3s ease-in-out;
+  }
+  p{
+    width: auto;
+    display: inline-block;
+    padding: 2px;
+  }
+  @keyframes sendedAppear {
+    0%{
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    80%{
+      opacity:1;
+    }
+    100%{
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+  @keyframes recievedAppear {
+    0%{
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    80%{
+      opacity: 1;
+    }
+    100%{
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}
+.tip{
+  width: 12px;
+  margin: 2px;
+  height: 12px;
+  background-color: grey;
+  border-radius: 50%;
+  float: left;
+  position: relative;
+}
+.tip:nth-child(1){
+  animation: tipAnimation 0.8s ease-in-out -2s infinite;
+}
+.tip:nth-child(2){
+  animation: tipAnimation 0.8s ease-in-out -1s infinite;
+}
+.tip:nth-child(3){
+  animation: tipAnimation 0.8s ease-in-out 0s infinite;
+}
+@keyframes tipAnimation{
+  0%{
+    transform: translateY(-4px);
+  }
+  50%{
+    transform: translateY(4px);
+  }
+  100%{
+    transform: translateY(-4px);
+  }
+}
