@@ -1,0 +1,55 @@
+h1{
+  font-size: 2.1em;
+  line-height: 41px;
+  padding-left: 2em;
+  padding-top: 160px;
+  color: white;
+  @media screen and (max-width: $responsive-media-ipad){
+    padding-left: 2em;
+    padding-right: 0;
+
+
+  }
+}
+
+h2{
+  font-size: 1.8em;
+  line-height: 41px;
+  padding-left: $pad-form-left;
+  padding-right: $pad-form-right;
+  padding-top: 120px;
+  color: white;
+  @media screen and (max-width: $responsive-media-ipad){
+    padding-left: 2em;
+    padding-right: 0;
+
+  }
+}
+p#rules-text{
+  font-size: 1em;
+  font-weight: lighter;
+  line-height: 31px;
+  //padding-left: $pad-form-left;
+  padding-right: $pad-form-right;
+  margin-bottom: 45px;
+  color: white;
+}
+h5{
+  font-size: 1.5em;
+  color: white;
+  font-weight: lighter;
+  line-height: 30px;
+  padding-left: 2em;
+  padding-top: 10px;
+  margin-bottom: 24px;
+  color: white;
+  @media screen and (max-width: $responsive-media-ipad){
+    padding-left: 2em;
+    padding-right: 0;
+
+  }
+
+}
+p.scroll-value{
+  vertical-align: 10px;
+}

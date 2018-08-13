@@ -1,11 +1,21 @@
 @import "reset";
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
-// Variables
+@import "Application/fonts";
+// Grids
+@import "Application/grids";
+// Variables && utils
 @import "Application/variables";
-
+@import "Application/utils";
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "Application/landing_cta/landing_cta";
+@import "Application/landing";
 @import "Application/messagerie";
+@import "Application/game";
+@import "Application/article";
 
+body{
+  overflow-x: hidden;
+}
+.yellow-color{
+  color: $titlesColor!important;
+}

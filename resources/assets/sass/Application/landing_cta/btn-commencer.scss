@@ -1,0 +1,62 @@
+@import "variables";
+div {
+  .btn-commencer {
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: Lighter;
+    &.hidden{
+      margin-left: 0%;
+      & > a {
+        margin-left: 0%;
+        animation: btnDisapear 1s ease-in;
+      }
+    }
+  }
+  .btn-back{
+    margin-top: 200px;
+    font-size: 1.5em;
+    text-decoration: none;
+    font-weight: Lighter;
+    &.hidden{
+      & > a {
+        margin-left: 0%;
+        animation: btnDisapear 1s ease-in;
+      }
+      margin-left: 0%;
+    }
+  }
+}
+@keyframes btnDisapear {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
+
+  span{
+    @extend a;
+  }
+  a.scroll-value{
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    padding: 0px 0px 0px 5px;
+    float: left;
+    opacity: 1;
+    transition-duration: 400ms;
+    padding-top:0;
+    &:hover{
+      opacity: 0.75;
+      padding-top: 2px;
+      transition-property: opacity,padding-top;
+      transition-duration: 500ms;
+    }
+
+  }
+  .fa{
+    font-weight:Bolder;
+    font-size: 20px;
+  }

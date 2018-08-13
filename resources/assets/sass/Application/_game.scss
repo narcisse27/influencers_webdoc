@@ -1,0 +1,120 @@
+#game__container{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 30px;
+  .header{
+    grid-column-start: 0;
+    grid-column-end: span 12;
+    height: 20vh;
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+    color: black;
+    background: #614fc6;
+    a{
+      margin-top: 1vh;
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      color: black;
+    }
+    .game__timing{
+      grid-column-start: 2;
+      grid-column-end: span 1;
+      color: black;
+    }
+    .game_data{
+      margin-top: 0vh;
+      grid-column-start: 2;
+      grid-column-end: span 8;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      .username__domaine{
+        grid-column-start: 1;
+        grid-column-end: span 2;
+        color: white;
+        .username{
+          font-size: 24px;
+        }
+      }
+      .user__subscribes{
+        grid-column-start: 6;
+        grid-column-end: span 2;
+        color: white;
+      }
+      .user__followers{
+        grid-column-start: 8;
+        grid-column-end: span 2;
+        .followers_nb{
+          font-size: 28px;
+          float: left;
+          width: 50%;
+          height: 100%;
+          color: black;
+        }
+        .followers_abos{
+          float: left;
+          width: 50%;
+          height: 100%;
+          color: black;
+        }
+      }
+      span{
+        width: 100%;
+        height: auto;
+        float:left;
+        display:block;
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+  .content{
+    background: #f1f1f1;
+    grid-column-start: 0;
+    grid-column-end: span 12;
+    height: 78vh;
+    display: grid;
+    float: left;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 30px;
+    padding-top: 2vh;
+    .question__wrap{
+      grid-column-start: 2;
+      grid-column-end: span 5;
+      height: 80vh;
+    }
+    .response__wrap{
+      grid-column-start: 7;
+      grid-column-end: span 5;
+      padding-top: 20vh;
+      padding-bottom: 20vh;
+      height: 40vh;
+      .responses__list{
+        .responses__list__item{
+          margin: 2vh;
+          width: 100%;
+          height: auto;
+          float: left;
+          .response__numerotation{
+            width: 100%;
+            height: auto;
+            float: left;
+          }
+          .response__content{
+            width: 100%;
+            height: auto;
+            float: left;
+          }
+          &:hover{
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+  }
+}

@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\ConvMessage;
+use App\ArticleSection;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
-class ApiConvMessageController extends Controller
+class ApiArticleSectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +14,9 @@ class ApiConvMessageController extends Controller
      */
     public function index()
     {
-        //
+        $data = ArticleSection::orderBy('order')->get();;
+        return response()->json($data);
+
     }
 
     /**
@@ -36,35 +37,25 @@ class ApiConvMessageController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $request['conversation_id'];
-        $order = $request['order'];
-        $content = $request['content'];
-        $user_id = $request['user_id'];
-        $timeToAppear = $request['timeToAppear'];
-        $tapping = $request['tapping'];
-        $tappingAt = $request['tappingAt'];
-        $data = new ConvMessage();
-        $data->conversation_id = $id;
-        $data->order = $order;
-        $data->content = $content;
-        $data->user_id = $user_id;
-        $data->timeToAppear = $timeToAppear;
-        $data->tapping = $tapping;
-        $data->tappingAt = $tappingAt;
-        $data->save();
-        return response()->json(['message' => 'success'], 200);
+        $article = new ArticleSection();
+        $article->title = $request['title'];
+        $article->cover = $request['cover'];
+        $article->accroche = $request['accroche'];
+        $article->order = 0;
+        $article->content = $request['content'];
+        $article->save();
+        return response()->json(['message' => 'ok'], 200);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  string  $slug
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $data = Conversation::with('messages')->where('slug', $slug)->first();
-        return response()->json($data, 200);
+        //
     }
 
     /**

@@ -12,8 +12,22 @@
 */
 
 $app = new Illuminate\Foundation\Application(
+
     realpath(__DIR__.'/../')
 );
+$env = $app->detectEnvironment(function(){
+    $environmentPath = __DIR__.'/../.env';
+    $setEnv = trim(file_get_contents($environmentPath));
+    if (file_exists($environmentPath))
+    {
+        putenv("$setEnv");
+        if (getenv('APP_ENV') && file_exists(__DIR__.'/../.' .getenv('APP_ENV') .'.env')) {
+            $dotenv = new Dotenv\Dotenv(__DIR__.'/../', '.'.getenv('APP_ENV').'.env');
+            $dotenv->load();
+        }
+    }
+});
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +66,6 @@ $app->singleton(
 |
 */
 
+
 return $app;
+

@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Conversation;
+use App\ConvMessage;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Controller;
 class ApiConversationController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class ApiConversationController extends Controller
      */
     public function index()
     {
-        $data = Conversation::all();
+        $data = Conversation::orderBy('order', 'ASC')->get();
         return response()->json($data);
     }
 
@@ -84,4 +85,32 @@ class ApiConversationController extends Controller
     {
         //
     }
+
+    /**
+     * Reorder conversations messages
+     * @return \Illuminate\Http\Response
+     */
+    public function reorder(Request $request){
+        $messages = $request['messages'];
+        $slug = $request['slug'];
+        for($i = 0; $i < count($messages); $i++){
+            ConvMessage::where('id', $messages[$i]['id'])
+                ->update(['order' => ( count($messages) - $i - 1 ) ]);
+        }
+        $data = Conversation::with('messages')->where('slug', $slug)->first();
+        return response()->json($data, 200);
+    }
+
+    public function reorderEntireConversationMessage($convSlug){
+        $conversation = Conversation::where('slug', $convSlug)->first();
+        $allMessages = ConvMessage::where('conversation_id', $conversation->id)->orderBy('order', 'DESC')->get();
+
+        for ($i = 0; $i < count($allMessages); $i++){
+            ConvMessage::where('id', $allMessages[$i]['id'])
+                ->update(['order' => ( count($allMessages) - $i - 1 ) ]);
+        }
+
+    }
+
+
 }

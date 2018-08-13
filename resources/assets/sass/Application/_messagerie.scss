@@ -1,150 +1,395 @@
+#conversations_presentation{
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  grid-template-columns: repeat(12, 1fr);
+  position: relative;
+  float: left;
+  background: $backgroundColor;
+  #left__aside{
+    display: block;
+    grid-column-start: 0;
+    grid-column-end: span 3;
+    height: 100vh;
+    .trait{
+      width: 2px;
+      height: 20%;
+      background: white;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+      margin-top: 30px;
+    }
+    #jeu__{
+      float: left;
+      height:33vh;
+      width: 100%;
+      span{
+        display: block;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        padding: 0;
+        width: auto;
+        position: relative;
+        margin-top: 80%;
+        color: white;
+        font-size: 24px;
+      }
+    }
+    #scroll-downs{
+      height:33vh;
+      width: 100%;
+      float: left;
+      .mousey{
+        width: 3px;
+        padding: 3px 12px;
+        padding-bottom: 0;
+        margin-bottom: 12px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 35px;
+        border: 2px solid #fff;
+        border-radius: 25px;
+        opacity: 0.75;
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+        .scroller{
+          width: 3px;
+          height: 13px;
+          border-radius: 100%;
+          background-color: #fff;
+          -webkit-animation-name: scroll;
+          animation-name: scroll;
+          -webkit-animation-duration: 2.2s;
+          animation-duration: 2.2s;
+          -webkit-animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+          animation-timing-function: cubic-bezier(0.15, 0.41, 0.69, 0.94);
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+    #article__{
+      height:33vh;
+      width: 100%;
+      float: left;
+      span{
+        display: block;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        padding: 0;
+        width: auto;
+        position: relative;
+        margin-top: 60%;
+        color: white;
+        font-size: 24px;
+      }
+    }
+  }
+  #right__aside{
+    display: flex;
+    grid-column-start: 4;
+    grid-column-end: span 10;
+    height: 100vh;
+    .conversation__card{
+      display: grid;
+      flex: 1 1 0px;
+      height: 100vh;
+      float: left;
+      grid-template-rows: repeat( 7, calc(100vh/7) );
+      a,h3{
+        font-size: 36px;
+        color: $titlesColor;
+        text-decoration: none;
+        z-index: 2;
+      }
+      .color-white{
+        color: white;
+      }
 
-.messagerie-wrap{
-  width: 400px;
-  height: 600px;
+      .data{
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        z-index: 2;
+        margin-top: -100vh;
+        display: grid;
+        grid-template-rows: repeat( 5, calc(100vh/5) );
+        .user__data{
+          width: 80%;
+          padding-left: 5%;
+          padding-right: 5%;
+          grid-row-start: 0;
+          grid-row-end: span 1;
+          margin-top: 10%;
+          margin-left: 10%;
+          margin-right: 10%;
+        }
+        .user_followers{
+          grid-row-start: 4;
+          grid-row-end: span 1;
+          width: 80%;
+          margin-left: 10%;
+          margin-right: 10%;
+          border-bottom: 2px solid white;
+          .heart{
+            background: url("../../../../public/img/like-icon.svg") no-repeat;
+            background-size: 100%;
+            width: 30px;
+            height: 30px;
+            display: block;
+            float: left;
+            margin-right: 10px;
+            margin-left: 68%;
+            margin-top: 3px;
+            float: right;
+          }
+          h3{
+            text-align: right;
+          }
+          h4{
+            width: 100%;
+            float: left;
+            text-align: right;
+            color: white;
+          }
+        }
+        .user_network_links{
+          width: 100%;
+          grid-row-start: 5;
+          grid-row-end: span 1;
+          width: 80%;
+          margin-left: 10%;
+          margin-right: 10%;
+          margin-top: 10px;
+          .facebook__picto{
+            background-size: 100%;
+            width: 30px;
+            height: 30px;
+            display: block;
+            float: left;
+            margin-right: 10px;
+            background: url("../../../../public/img/facebook-icon.svg");
+          }
+          .instagram__picto{
+            background-size: 100%;
+            width: 30px;
+            height: 30px;
+            display: block;
+            float: left;
+            margin-right: 10px;
+            background: url("../../../../public/img/insta-icon.svg");
+          }
+        }
+      }
+    }
+    .conversation_avatar{
+      width: 100%;
+      height: 100%;
+      grid-row-start: 0;
+      grid-row-end: span 7;
+      overflow: hidden;
+      img{
+        height: auto;
+        width: 100%;
+      }
+    }
+  }
+}
+.messagerie-wrap {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100vw;
+  height: 100vh;
   background-color: grey;
   border: 1px solid grey;
-}
-.messagerie-header{
-  width: 100%;
-  height: 50px;
-  background-color: white;
-  .title{
-     width: 70%;
-     height: 100%;
-     float: left;
-     h3{
-       text-align: left;
-       font-size: 24px;
-       line-height: 28px;
-       vertical-align: middle;
-       margin: 0px;
-       padding: 12px 0px 0px 8px;
-     }
+  overflow: hidden;
+  header{
+    display: grid;
+    grid-template-rows: repeat(5 , calc(100vh/5) );
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-start: 0;
+    grid-column-end: span 4;
+    height: 100vh;
+    background-color: #4e4dc6;
+    .title {
+      width: 70%;
+      height: 100%;
+      float: left;
+      h3 {
+        text-align: left;
+        font-size: 24px;
+        line-height: 28px;
+        vertical-align: middle;
+        margin: 0;
+        padding: 12px 0 0 8px;
+      }
+      .main__data{
+        width: 100%;
+        height: auto;
+        margin-bottom: 36px;
+        float: left;
+      }
+      .second__data{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .icon {
+      grid-row-start: 1;
+      grid-row-end: span 3;
+      grid-column-start: 1;
+      grid-column-end: span 6;
+      width: 100%;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: auto;
+      }
+    }
+    .data__block{
+      grid-row-start: 3;
+      grid-row-end: span 2;
+      display: block;
+      background: #090928;
+      margin-left: -20vw;
+      padding-left: 20px;
+      padding-top: 20px;
+      .publications{
+        margin-bottom: 5px;
+      }
+      h3{
+        margin-left: 0px;
+        padding-left: 0px;
+      }
+    }
+    a{
+      grid-row-start: 5;
+      grid-row-end: span 1;
+      grid-column-start: 2;
+      margin-top: 50%;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+    }
   }
-}
-.icons{
-  width: 25%;
-  height: 100%;
-  float: left;
-  padding-right: 5%;
-  .icon{
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    float: right;
-    margin: 12px 2px 2px 2px;
-  }
-}
-.messagerie-body{
-  width: 92%;
-  height: 530px;
-  margin: 2%;
-  float: left;
-  border-radius: 1%;
-  background-color: white;
-  padding: 2%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  display: flex; /* or inline-flex */
-  flex-direction:column-reverse;
-}
-.message-wrap{
-  float: left;
-  width: 100%;
-  height: auto;
-  margin-bottom: 5px;
-  animation: messageAppear 0.3s ease-in;
-}
-
-.message {
-  margin: 2px;
-  padding: 5px;
-  min-height: 20px;
-  background-color: white;
-  border-radius: 5px;
-  font-size: 16px;
-  &.sended{
-    max-width: 70%;
-    float: right;
-    background-color: grey;
-    border: 1px solid grey;
-    animation: sendedAppear 0.3s ease-in-out;
-  }
-  &.tapping {
-    width: 60px;
-    height: 28px;
-    background-color: white;
-    border: 1px solid black;
-  }
-  &.appearing{
-    width: 20px;
-    height: 20px;
-  }
-  &.recieved{
-    max-width: 70%;
+  .messagerie-body {
+    //width: 92%;
+    grid-column-start: 5;
+    grid-column-end: span 8;
+    height: 90vh;
     float: left;
-    border: 1px solid grey;
-    animation: recievedAppear 0.3s ease-in-out;
+    padding: 5vh 5vw 5vh 5vw;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex; /* or inline-flex */
+    flex-direction: column-reverse;
+    background: #f6f2ff;
   }
-  p{
-    width: auto;
-    display: inline-block;
-    padding: 2px;
+  .message-wrap {
+    float: left;
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+    transition: 300ms;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 10px;
   }
-  @keyframes sendedAppear {
-    0%{
-      transform: translateX(100%);
-      opacity: 0;
+
+  .message {
+    margin: 2px;
+    padding: 10px;
+    min-height: 20px;
+    font-size: 16px;
+    &.sended {
+      max-width: 70%;
+      float: right;
+      background-color: #ebe7f4;
+      border-radius: 5px 0px 5px 5px;
+      &.arriving{
+        animation: sendedAppear 0.3s ease-in-out;
+      }
     }
-    80%{
-      opacity:1;
+    &.tapping {
+      width: 60px;
+      height: 28px;
+      background-color: white;
+      border-radius: 5px;
     }
-    100%{
-      transform: translateX(0%);
-      opacity: 1;
+    &.appearing {
+      width: 20px;
+      height: 20px;
+    }
+    &.recieved {
+      max-width: 70%;
+      float: left;
+      border: 1px solid black;
+      animation: recievedAppear 0.3s ease-in-out;
+      border-radius: 0px 5px 5px 5px;
+      &.arriving{
+        animation: recievedAppear 0.3s ease-in-out;
+      }
+    }
+    p {
+      width: auto;
+      display: inline-block;
+      padding: 2px;
+    }
+    @keyframes sendedAppear {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%);
+        opacity: 1;
+      }
+    }
+    @keyframes recievedAppear {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(0%);
+        opacity: 1;
+      }
     }
   }
-  @keyframes recievedAppear {
-    0%{
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    80%{
-      opacity: 1;
-    }
-    100%{
-      transform: translateX(0%);
-      opacity: 1;
-    }
+  .tip {
+    width: 12px;
+    margin: 2px;
+    height: 12px;
+    background-color: grey;
+    border-radius: 50%;
+    float: left;
+    position: relative;
   }
-}
-.tip{
-  width: 12px;
-  margin: 2px;
-  height: 12px;
-  background-color: grey;
-  border-radius: 50%;
-  float: left;
-  position: relative;
-}
-.tip:nth-child(1){
-  animation: tipAnimation 0.8s ease-in-out -2s infinite;
-}
-.tip:nth-child(2){
-  animation: tipAnimation 0.8s ease-in-out -1s infinite;
-}
-.tip:nth-child(3){
-  animation: tipAnimation 0.8s ease-in-out 0s infinite;
-}
-@keyframes tipAnimation{
-  0%{
-    transform: translateY(-4px);
+  .tip:nth-child(1) {
+    animation: tipAnimation 0.8s ease-in-out -2s infinite;
   }
-  50%{
-    transform: translateY(4px);
+  .tip:nth-child(2) {
+    animation: tipAnimation 0.8s ease-in-out -1s infinite;
   }
-  100%{
-    transform: translateY(-4px);
+  .tip:nth-child(3) {
+    animation: tipAnimation 0.8s ease-in-out 0s infinite;
+  }
+  @keyframes tipAnimation {
+    0% {
+      transform: translateY(-4px);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+    100% {
+      transform: translateY(-4px);
+    }
   }
 }

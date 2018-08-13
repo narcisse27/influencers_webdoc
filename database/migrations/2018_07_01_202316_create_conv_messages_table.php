@@ -18,7 +18,7 @@ class CreateConvMessagesTable extends Migration
             $table->integer('conversation_id')->unsigned()->index();
             $table->integer('order');
             $table->text('content');
-            $table->integer('user_id');
+            $table->string('user_name');
             $table->float('timeToAppear');
             $table->boolean('tapping');
             $table->float('tappingAt')->nullable();

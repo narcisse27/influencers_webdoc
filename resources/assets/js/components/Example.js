@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Landing from './Application/Landing';
 import Messagerie from './Application/Messagerie';
+import Game from './Application/Game';
+import GamePartie from './Application/GamePartie';
 export default class Example extends Component {
     render() {
         return (
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <div className="card">
-                            <div className="card-header"></div>
-                            <div className="card-body">
-                                <Messagerie/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <Router>
+              <div>
+                <Route exact path="/game" component={Game}/>
+                <Route exact path="/game/:slug/:username" component={GamePartie}/>
+                <Route exact path="/" component={Landing} />
+                <Route path="/conversation/:slug" component={Messagerie} />
+              </div>
+          </Router>
         );
     }
 }

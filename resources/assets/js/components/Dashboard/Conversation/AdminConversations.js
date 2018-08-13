@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+
 export default class AdminConversations extends Component {
   constructor(props){
     super(props);
@@ -19,23 +20,35 @@ export default class AdminConversations extends Component {
       })
   }
   renderConversations(){
-      let data = this.state.conversations.map( (item) => {
-        let bg = {backgroundImage: item.destinataire_picture};
-        return (<div className="col-sm-6">
-          <div className="card">
-            <div className="card-header">
-              <Link to={"/dashboard/conversation/" +item.slug}>
-                <h3 className="card-title">{ item.destinataire_name }</h3>
-              </Link>
-            </div>
-            <div className="card-body">
-              <img src={item.destinataire_picture} />
-            </div>
+    let data = this.state.conversations.map( (item) => {
+      let bg = {backgroundImage: item.destinataire_picture};
+      return (<div className="col-sm-6">
+        <div className="card">
+          <div className="card-header">
+            <Link to={"/dashboard/conversation/" +item.slug}>
+              <h3 className="card-title">{ item.destinataire_name }</h3>
+            </Link>
           </div>
-        </div>)
-      });
+          <div className="card-body">
+            <img src={item.destinataire_picture} />
+          </div>
+        </div>
+      </div>)
+    });
     console.log(data);
     return data;
+  }
+  lfmF(options, cb) {
+
+    var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
+
+    window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
+    window.SetUrl = cb;
+  }
+  handleLfm(){
+    this.lfmF({type: 'image', prefix: 'prefix'}, function(url, path) {
+      alert('ok lfm');
+    })
   }
   render() {
     return (
@@ -64,16 +77,14 @@ export default class AdminConversations extends Component {
                     </div>
                     <div className="form-group">
                       <div className="input-group">
-                                       <span className="input-group-btn">
-                                         <a id="lfm" data-input="thumbnail" data-preview="holder" className="btn btn-primary">
-                                           <i className="fa fa-picture-o"></i> Choose
-                                         </a>
-                                       </span>
+                       <span className="input-group-btn">
+                         <a id="lfm" data-input="thumbnail" data-preview="holder" class="btn btn-primary" onClick={this.handleLfm}>
+                           <i className="fa fa-picture-o"></i> Choose
+                         </a>
+                       </span>
                         <input id="thumbnail" className="form-control" type="text" name="filepath" />
                       </div>
                       <img id="holder" />
-                        <label className="form-label">Avatar du destinataire</label>
-                        <input type="text" className="form-control" name="example-disabled-input" placeholder="Disabled.." value="Well, she turned me into a newt." disabled="" />
                     </div>
                     <div className="form-group">
                       <label className="form-label">Avatar de l'expéditeur</label>
@@ -96,6 +107,6 @@ export default class AdminConversations extends Component {
           {this.renderConversations()}
         </div>
       </div>
-    );
+  );
   }
-}
+  }

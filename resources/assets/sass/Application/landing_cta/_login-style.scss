@@ -1,0 +1,78 @@
+@import "variables";
+#login-form-interact{
+  float: right;
+  position: relative;
+  margin-right: 10%;
+}
+form#form-login{
+  color: white;
+  font-size: 1em;
+  padding-left: $pad-form-left;
+  padding-right: $pad-form-right;
+  margin-top: 20px;
+
+}
+
+input.field-login{
+  width: 80%;
+  padding-left: 10%;
+  padding-right: 10%;
+  border: 2px solid white;
+  border-radius: 5px;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  margin-top: 9px;
+  margin-bottom: 18px;
+  background-color: unset;
+  color: white;
+  font-weight: lighter;
+  outline: none;
+
+}
+
+input.btn-login-send {
+  border: 2px solid white;
+  border-radius: 5px;
+  padding: 11px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-top: 8px;
+  margin-bottom: 18px;
+  background-color: unset;
+  color: white;
+  outline: none;
+  float: right;
+  -webkit-transition-duration: 200ms;
+  -moz-transition-duration: 200ms;
+  -ms-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  &:hover{
+    background-color: white;
+    transition-property: background-color;
+    transition-duration: 50ms;
+    color: $back-orange-color;
+  }
+}
+  .select__domain{
+    width: 100%;
+    float: left;
+    color: white;
+    background: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding-top: 11px;
+    padding-bottom: 11px;
+  }
+.avatar{
+  width: 100%;
+  height: 20%;
+  float: left;
+  background-image: url("../../../../../public/img/avatar.svg");
+  background-repeat: no-repeat;
+  background-size: 100px;
+  background-position: center;
+
+}
+
+
