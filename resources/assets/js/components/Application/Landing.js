@@ -9,7 +9,7 @@ export default class Landing extends Component {
     this.state = {articles: [], toggler: false}
   }
   componentDidMount(){
-    axios.get('http://8-24.ch/api/articles/')
+    axios.get('http://localhost:8000/api/articles/')
       .then( (response) => {
         console.log(response);
         this.setState({articles: response.data});
@@ -47,7 +47,7 @@ export default class Landing extends Component {
             <div className="block-text">
               <h1>Etre influenceur, ça vous tente ?</h1>
               <h5>Les influenceurs sont de plus en plus nombreux sur le web. Du débutant au professionnel, ArcInfo en a rencontré trois, originaires de la région.
-                Ces nouvelles stars d’internet partagent, sur leur blog et sur les réseaux sociaux, leur passion. Chacun dans leur domaine et à leurs manières, ils inspirent ceux qui les suivent. Mais comment font-ils ?
+                Ces nouvelles stars d’internet partagent, sur leur blog et sur les réseaux sociaux, leur passion. Chacun dans leur domaine et à leur manière, ils inspirent ceux qui les suivent. Mais comment font-ils ?
               </h5>
               <div id="landing-form-interact">
                 <div onMouseEnter={this.handleToggler.bind(this)} class="btn-commencer">

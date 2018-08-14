@@ -295,74 +295,70 @@
     margin-bottom: 20px;
     margin-top: 10px;
     padding: 10px;
+    transition: 300ms;
+    .message {
+      margin: 2px;
+      padding: 10px;
+      min-height: 20px;
+      font-size: 16px;
+      &.sended {
+        max-width: 70%;
+        float: right;
+        background-color: #ebe7f4;
+        border-radius: 10px 0px 10px 10px;
+        &.arriving{
+          animation: sendedAppear 0.3s ease-in-out;
+        }
+      }
+      &.recieved {
+        max-width: 70%;
+        float: left;
+        border: 1px solid #b5b5b5;
+        border-radius: 0px 10px 10px 10px;
+        &.arriving{
+          animation: sendedAppear 0.3s ease-in-out;
+        }
+      }
+      &.tapping {
+        width: 60px;
+        height: 28px;
+        background-color: white;
+        border-radius: 5px;
+      }
+      p {
+        width: auto;
+        display: inline-block;
+        padding: 2px;
+      }
+      @keyframes sendedAppear {
+        0% {
+          transform: translateX(100%);
+          opacity: 0;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+      }
+      @keyframes recievedAppear {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        80% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateX(0%);
+          opacity: 1;
+        }
+      }
+    }
   }
 
-  .message {
-    margin: 2px;
-    padding: 10px;
-    min-height: 20px;
-    font-size: 16px;
-    &.sended {
-      max-width: 70%;
-      float: right;
-      background-color: #ebe7f4;
-      border-radius: 5px 0px 5px 5px;
-      &.arriving{
-        animation: sendedAppear 0.3s ease-in-out;
-      }
-    }
-    &.tapping {
-      width: 60px;
-      height: 28px;
-      background-color: white;
-      border-radius: 5px;
-    }
-    &.appearing {
-      width: 20px;
-      height: 20px;
-    }
-    &.recieved {
-      max-width: 70%;
-      float: left;
-      border: 1px solid black;
-      animation: recievedAppear 0.3s ease-in-out;
-      border-radius: 0px 5px 5px 5px;
-      &.arriving{
-        animation: recievedAppear 0.3s ease-in-out;
-      }
-    }
-    p {
-      width: auto;
-      display: inline-block;
-      padding: 2px;
-    }
-    @keyframes sendedAppear {
-      0% {
-        transform: translateX(100%);
-        opacity: 0;
-      }
-      80% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(0%);
-        opacity: 1;
-      }
-    }
-    @keyframes recievedAppear {
-      0% {
-        transform: translateX(-100%);
-        opacity: 0;
-      }
-      80% {
-        opacity: 1;
-      }
-      100% {
-        transform: translateX(0%);
-        opacity: 1;
-      }
-    }
-  }
   .tip {
     width: 12px;
     margin: 2px;

@@ -37,5 +37,18 @@ class ConversationSeeder extends Seeder
             'destinataire_publications' => 3734,
             'slug' => 'jorge',
         ]);
+        DB::table('conversations')->insert([
+            'order' => 2,
+            'expediteur_name' => 'Hélène',
+            'destinataire_name' => 'Wallace',
+            'destinataire_picture' => '/img/photos/desk-wallace-profil.png',
+            'destinataire_mini_picture' => '/img/photos/Wallace-profil-mobile.png',
+            'destinataire_info' => 'Mode',
+            'destinataire_followers' => 136,
+            'destinataire_facebook_link' => null,
+            'destinataire_instagram_link' => null,
+            'destinataire_publications' => 684,
+            'slug' => 'wallace',
+        ]);
     }
 }

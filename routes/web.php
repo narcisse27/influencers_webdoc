@@ -15,6 +15,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/conversation/{slug}', function () {
+    return view('welcome');
+});
+Route::get('/game/{slug}/{name}', function () {
+    return view('welcome');
+});
 Route::get('/home', 'HomeController@index')->name('home');
 
 

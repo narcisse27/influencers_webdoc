@@ -7,7 +7,7 @@ export default class Conversations extends Component {
     this.state = {conversations: []}
   }
   componentDidMount(){
-    axios.get('http://8-24.ch/api/conversation/')
+    axios.get('http://localhost:8000/api/conversation/')
       .then( (response) => {
         console.log(response);
         this.setState({conversations: response.data})
@@ -15,6 +15,16 @@ export default class Conversations extends Component {
       .catch( (error) => {
         alert(error);
       });
+  }
+  renderFacebookLink(link){
+    if(link != null){
+      return (<a href={link} target="_blank"><div className="facebook__picto"></div></a>)
+    }
+  }
+  renderInstagramLink(link){
+    if(link != null){
+      return (<a href={link} target="_blank"><div className="instagram__picto"></div></a>)
+    }
   }
   renderConversations(){
     let data = this.state.conversations.map( (item) => {
@@ -33,8 +43,8 @@ export default class Conversations extends Component {
               <h4>Followers</h4>
             </div>
             <div className="user_network_links">
-              <a href={item.destinataire_instagram_link} target="_blank"><div className="instagram__picto"></div></a>
-              <a href={item.destinataire_facebook_link} target="_blank"><div className="facebook__picto"></div></a>
+              {this.renderInstagramLink(item.destinataire_instagram_link)}
+              {this.renderFacebookLink(item.destinataire_facebook_link)}
             </div>
           </div>
         </div>

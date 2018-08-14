@@ -67,7 +67,7 @@ class ResponseSeeder extends Seeder
         DB::table('responses')->insert([
             'question_id' => 2 + 1,
             'order' => 1,
-            'response' => "Oui, mais il va surement falloir partir au bout d’un moment ! ",
+            'response' => "Oui, mais il va sûrement falloir partir au bout d’un moment ! ",
             "response_correct" => true,
             "action" => +20
         ]);
@@ -154,7 +154,7 @@ class ResponseSeeder extends Seeder
         DB::table('responses')->insert([
             'question_id' => 6 + 1,
             'order' => 0,
-            'response' => "C’est trop bien, on m’envoit des cadeaux pas besoin d’en demander plus ! ",
+            'response' => "C’est trop bien, on m’envoit  des cadeaux pas besoin d’en demander plus ! ",
             "response_correct" => false,
             "action" => -40
         ]);
@@ -216,7 +216,7 @@ class ResponseSeeder extends Seeder
         DB::table('responses')->insert([
             'question_id' => 8 + 1,
             'order' => 2,
-            'response' => "Tant que je ne me fait pas épingler, je ne déclare rien",
+            'response' => "Tant que je ne me fais pas épingler, je ne déclare rien",
             "response_correct" => false,
             "action" => -20
         ]);
@@ -281,7 +281,7 @@ class ResponseSeeder extends Seeder
         DB::table('responses')->insert([
             'question_id' => 11 + 1,
             'order' => 1,
-            'response' => "Oui, mais il va surement falloir partir au bout d’un moment ! ",
+            'response' => "Oui, mais il va sûrement  falloir partir au bout d’un moment ! ",
             "response_correct" => true,
             "action" => +20
         ]);
@@ -430,7 +430,7 @@ class ResponseSeeder extends Seeder
         DB::table('responses')->insert([
             'question_id' => 17 + 1,
             'order' => 2,
-            'response' => "Tant que je ne me fait pas épingler, je ne déclare rien",
+            'response' => "Tant que je ne me fais pas épingler, je ne déclare rien",
             "response_correct" => false,
             "action" => -20
         ]);
@@ -495,7 +495,7 @@ class ResponseSeeder extends Seeder
         DB::table('responses')->insert([
             'question_id' => 20 + 1,
             'order' => 1,
-            'response' => "Oui, mais il va surement falloir partir au bout d’un moment ! ",
+            'response' => "Oui, mais il va sûrement  falloir partir au bout d’un moment ! ",
             "response_correct" => true,
             "action" => +20
         ]);
@@ -644,7 +644,7 @@ class ResponseSeeder extends Seeder
         DB::table('responses')->insert([
             'question_id' => 26 + 1,
             'order' => 2,
-            'response' => "Tant que je ne me fait pas épingler, je ne déclare rien",
+            'response' => "Tant que je ne me fais pas épingler, je ne déclare rien",
             "response_correct" => false,
             "action" => -20
         ]);

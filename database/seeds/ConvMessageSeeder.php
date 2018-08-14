@@ -296,5 +296,97 @@ class ConvMessageSeeder extends Seeder
         ]);
 
 
+
+        // Wallace
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 0,
+            'content' => 'Salut Wallace, tu peux m’expliquer en quoi consiste ton activité d’influenceuse ?',
+            'user_name' => 'Hélène',
+            'timeToAppear' => 0.0,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 1,
+            'content' => 'Alors, j’ai lancé mon blog en 2014, il est principalement consacré à la mode. Je partage mes looks à mes abonnés et je leur donne des conseils : quel type de vêtement faut-il porter, pour quelle occasion…',
+            'user_name' => 'Wallace',
+            'timeToAppear' => 0.8,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 2,
+            'content' => 'Ça te prend beaucoup de temps ? Que fais-tu à côté de ton blog ?',
+            'user_name' => 'Hélène',
+            'timeToAppear' => 1.2,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 3,
+            'content' => 'A côté du blog, je suis étudiante en psychologie, à l’Université de Neuchâtel. Le blog me prend 90% de mon temps et les 10% restant je les accorde à mes études. C’est pas bien, j’avoue haha. Mais vraiment je suis passionnée et j’ai beaucoup de choses à faire pour mon blog. ',
+            'user_name' => 'Wallace',
+            'timeToAppear' => 2.3,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 4,
+            'content' => 'Tu comptes plus de 136000 abonnés sur ton compte Instagram, mais d’où viennent-ils ?',
+            'user_name' => 'Hélène',
+            'timeToAppear' => 2.9,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 5,
+            'content' => 'Mes abonnés viennent principalement des Etats-Unis et d’Angleterre. Ensuite, il y a les Allemands, les Français. Et en dernière position… La Suisse. Je n’ai pas vraiment une grande audience ici ! C’est dommage mais c’est comme ça :)',
+            'user_name' => 'Wallace',
+            'timeToAppear' => 4.1,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 6,
+            'content' => 'Un conseil pour celles et ceux qui voudraient se prendre en photo à Neuchâtel ? Quel est le lieu que tu recommandes ?',
+            'user_name' => 'Hélène',
+            'timeToAppear' => 5.2,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 7,
+            'content' => 'Le dernier spot que je recommande à tout le monde, pour faire des photos à Neuchâtel, c’est le Jardin Botanique. C’est THE place to be. Il y a tellement de petits coins où l’on peut se prendre en photos et se filmer. Il y a des looks sympas à créer. C’est une atmosphère assez cool !',
+            'user_name' => 'Wallace',
+            'timeToAppear' => 5.6,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
+        DB::table('conv_messages')->insert([
+            'conversation_id' => 3,
+            'order' => 8,
+            'content' => 'Merci Wallace !',
+            'user_name' => 'Hélène',
+            'timeToAppear' => 6.8,
+            'tapping' => false,
+            'tappingAt' => 0,
+            'rendered' => false,
+        ]);
     }
 }

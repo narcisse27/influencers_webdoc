@@ -46,7 +46,7 @@ class Messagerie extends Component{
     this.setState({count: (this.state.count + 0.1), messagesToShow: itemsToShow});
   }
   componentDidMount(){
-    axios.get('http://8-24.ch/api/conversation/' + this.props.match.params.slug)
+    axios.get('http://localhost:8000/api/conversation/' + this.props.match.params.slug)
       .then( (response) => {
         console.log(response);
         this.setState({conversation: response.data})
@@ -56,37 +56,36 @@ class Messagerie extends Component{
       });
     setInterval(this.tick.bind(this), 1000)
   }
-  renderingUsers(){
-    let data = this.state.users.map( (user) => {
-      //return <img className="icon" src={user.picture} alt={user.name} title={user.name} />
-    });
-    return data;
+  renderMessageWrap(message, type){
+    return (
+      <div className="message-wrap" >
+        <div title={message.user_name} className={"message " +type +" "+ (message.rendered ? '' : ' arriving')}>
+          <p>{message.content}</p>
+        </div>
+      </div>
+    )
+  }
+  tappingPoints(){
+    return (<div className="message-wrap">
+      <div className="message tapping">
+        <span className="tip"></span>
+        <span className="tip"></span>
+        <span className="tip"></span>
+      </div>
+    </div>)
   }
 
   renderingMessages(){
     let messages = this.state.messagesToShow.map( (message) => {
       if(!message.tapping) {
-        if (message.user_name == this.state.conversation.expediteur_name) {
-          return (<div className="message-wrap">
-            <div className={"message sended" + (message.rendered ? '' : ' arriving')}>
-              <p>{message.content}</p>
-            </div>
-          </div>)
-        } else {
-          return (<div className="message-wrap">
-            <div className={"message recieved" + (message.rendered ? '' : ' arriving')}>
-              <p>{message.content}</p>
-            </div>
-          </div>)
+        if (message.user_name === this.state.conversation.expediteur_name) {
+          return this.renderMessageWrap(message, 'sended');
+        }
+        if (message.user_name != this.state.conversation.expediteur_name) {
+          return this.renderMessageWrap(message, 'recieved');
         }
       }else{
-        return <div className="message-wrap">
-          <div className="message tapping">
-            <span className="tip"></span>
-            <span className="tip"></span>
-            <span className="tip"></span>
-          </div>
-        </div>
+        return this.tappingPoints();
       }
     });
     return messages;

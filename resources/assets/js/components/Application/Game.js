@@ -6,7 +6,7 @@ class Game extends Component{
     this.state = {username: '', questionnaire_slug: '', questionnaires: []}
   }
   componentDidMount(){
-    axios.get('http://8-24.ch/api/questionnaires/')
+    axios.get('http://localhost:8000/api/questionnaires/')
       .then( (response) => {
         console.log(response);
         this.setState({questionnaires: response.data, questionnaire_slug: response.data[0].slug});

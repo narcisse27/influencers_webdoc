@@ -21,8 +21,8 @@ class CreateConversationsTable extends Migration
             $table->string('destinataire_mini_picture');
             $table->string('destinataire_info');
             $table->float('destinataire_followers');
-            $table->string('destinataire_facebook_link');
-            $table->string('destinataire_instagram_link');
+            $table->string('destinataire_facebook_link')->nullable();
+            $table->string('destinataire_instagram_link')->nullable();
             $table->integer('destinataire_publications');
             $table->string('expediteur_name');
             $table->string('slug')->unique();
