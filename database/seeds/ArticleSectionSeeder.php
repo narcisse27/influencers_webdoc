@@ -16,7 +16,7 @@ class ArticleSectionSeeder extends Seeder
             'title' => 'Le monde des influenceurs : une économie à part entière',
             'cover' => '/img/photos/article__banniere.jpg',
             'accroche' => 'Vous l’aurez compris : être influenceur ne signifie pas simplement se prendre en photo, parler de soi et faire du placement de produits. Toute une économie s’est mise en place autour de ces leader d’opinion 2.0. Mais qui sont-ils ? Avec qui travaillent-ils ? Sont-ils des concurrents de la presse ? Laurence Allard et Dan Noël, deux spécialistes dans le domaine, nous livrent leur analyse.',
-            'content' => "<h2>Qu&rsquo;est-ce qu&rsquo;un influenceur ?</h2>
+            'content' => "<div class='article__mini__bloc'><h2>Qu&rsquo;est-ce qu&rsquo;un influenceur ?</h2>
 
 <p>Laurence Allard, professeure &agrave; La Sorbonne, a &eacute;tudi&eacute; l&rsquo;&eacute;conomie de l&rsquo;influence. Elle d&eacute;crit un influenceur comme &laquo; une personnalit&eacute; &raquo; qui s&rsquo;exprime &agrave; travers des vid&eacute;os, des articles, des photos. Il se met en sc&egrave;ne, se performe.&nbsp; &laquo; L&rsquo;influenceur travaille &agrave; &ecirc;tre lui-m&ecirc;me, &agrave; &ecirc;tre authentique. &raquo; Il est transfigur&eacute; en &laquo; talent &raquo; par toute une &eacute;conomie d&rsquo;acteurs qui vit autour de la plateforme.</p>
 
@@ -27,9 +27,8 @@ class ArticleSectionSeeder extends Seeder
 <p>Pour Dan No&euml;l, expert en marketing digital et fondateur de l&rsquo;agence Starterland &agrave; Neuch&acirc;tel, un influenceur est une personne qui &laquo; par son statut, sa position ou son exposition m&eacute;diatique peut influencer les comportements de consommation et d&rsquo;achat &raquo;. Cette d&eacute;finition est devenue plus complexe avec la digitalisation.</p>
 
 <p>&laquo; Je dirais que l&rsquo;activit&eacute; d&rsquo;influenceur consiste &agrave; d&eacute;velopper son autorit&eacute; dans un domaine qui nous passionne, de construire une communaut&eacute; fid&egrave;le, r&eacute;elle et surtout engag&eacute;e autour de cette th&eacute;matique ainsi que sa propre personne &raquo;, r&eacute;sume-t-il.</p>
-
-<p>&nbsp;</p>
-
+</div>
+<div class='article__mini__bloc'>
 <h2>Une authenticit&eacute; construite</h2>
 
 <p>La sociologue, Laurence Allard, ne pense pas que l&rsquo;influenceur doive partager son intimit&eacute;. &laquo; Ce n&rsquo;est pas une mise &agrave; nue de son intimit&eacute;, ce n&rsquo;est pas aussi trivial que cela. &raquo; Selon elle, l&rsquo;influenceur va plut&ocirc;t partager sa subjectivit&eacute; : &laquo; ce qu&rsquo;il a dans le ventre, son int&eacute;riorit&eacute;. On parle de &lsquo;&rsquo;belle personne morale&rsquo;&rsquo;, c&rsquo;est-&agrave;-dire un individu qui va exprimer son imaginaire, sa cr&eacute;ativit&eacute; &agrave; travers une vid&eacute;o, une photo ou un Snap. &raquo;</p>
@@ -42,7 +41,8 @@ class ArticleSectionSeeder extends Seeder
 
 <p>L&rsquo;authenticit&eacute; peut &eacute;galement passer par la transparence dans les partenariats avec les marques. L&rsquo;influenceur va expliciter la dimension travail de son activit&eacute; : &laquo; &lsquo;&rsquo;C&rsquo;est mon job, je gagne de l&rsquo;argent ainsi. Mais &ccedil;a n&rsquo;emp&ecirc;che pas qu&rsquo;on soit bien ensemble, qu&rsquo;on rigole ensemble.&rsquo;&rsquo; &raquo; Et ce pacte publicitaire est clair pour Laurence Allard. &laquo; C&rsquo;est une sorte de surtexte &raquo;, explique la sociologue.</p>
 
-<p>&nbsp;</p>
+</div>
+<div class='article__mini__bloc'>
 
 <h2>De nombreux acteurs</h2>
 
@@ -56,7 +56,7 @@ class ArticleSectionSeeder extends Seeder
 
 <p>&laquo; On est dans une logique d&rsquo;audience et de mon&eacute;tisation par la publicit&eacute;. Comme pour la t&eacute;l&eacute;vision, on mon&eacute;tise &lsquo;&rsquo;du temps de cerveau humain disponible&rsquo;&rsquo; comme dirait Patrick Le Lay, pr&eacute;sident du groupe TF1. &raquo;</p>
 
-<p>&nbsp;</p>
+</div>
 
 <h2>Une &eacute;conomie &laquo; opportuniste &raquo;</h2>
 
@@ -68,7 +68,7 @@ class ArticleSectionSeeder extends Seeder
 
 <p>Alors pour elle, il ne faut pas r&eacute;duire cette &eacute;conomie &agrave; des probl&eacute;matiques telles que &laquo; Est-ce que c&rsquo;est vrai ? Est-ce que c&rsquo;est vraiment elle ? Est-ce que c&rsquo;est sa vraie identit&eacute; ? C&rsquo;est anecdotique puisque c&rsquo;est un march&eacute;, une &eacute;conomie. &raquo;</p>
 
-<p>&nbsp;</p>
+<div class='article__mini__bloc'>
 
 <h2>Des concurrents de la presse</h2>
 
@@ -84,7 +84,8 @@ class ArticleSectionSeeder extends Seeder
 
 <p>Idem pour la presse magazine. &laquo; Celle-ci avait extr&ecirc;mement norm&eacute; les corps, et le Youtube Mode et Beaut&eacute; a fait explos&eacute; tous ses st&eacute;r&eacute;otypes v&eacute;hicul&eacute;s par cette presse. La norme corporelle existe toujours mais maintenant il y a des modes corporelles. &raquo;</p>
 
-<p>&nbsp;</p>
+</div>
+<div class='article__mini__bloc'>
 
 <h2>Le nombre d&rsquo;abonn&eacute;s n&rsquo;est plus un crit&egrave;re</h2>
 
@@ -96,7 +97,9 @@ class ArticleSectionSeeder extends Seeder
 
 <p>L&rsquo;expert en digital marketing pr&eacute;cise &eacute;galement que tout d&eacute;pend des objectifs poursuivis par les marques ou les personnes qui souhaite devenir des leaders d&rsquo;opinion num&eacute;rique. &laquo; Il existe des micro-influenceurs locaux avec une tr&egrave;s forte influence car ceux-ci sont devenus de v&eacute;ritables &lsquo;&rsquo;&eacute;vang&eacute;listes&rsquo;&rsquo; au sens marketing du terme. &raquo;</p>
 
-<p>On peut devenir un influenceur d&rsquo;un quartier, d&rsquo;un commer&ccedil;ant. &laquo; Un influenceur est une figure sociale de construction des march&eacute;s qui se rencontre &agrave; tous les &eacute;tages du monde du commerce &raquo;, note Laurence Allard.</p>'",
+<p>On peut devenir un influenceur d&rsquo;un quartier, d&rsquo;un commer&ccedil;ant. &laquo; Un influenceur est une figure sociale de construction des march&eacute;s qui se rencontre &agrave; tous les &eacute;tages du monde du commerce &raquo;, note Laurence Allard.</p>'
+</div>
+",
         ]);
     }
 }

@@ -14,9 +14,11 @@
                 <div id="example"></div>
             </div>
         </div>
+
         <script src="{{ asset('/js/app.js') }}"></script>
         <script src="{{ asset('/js/particles.min.js') }}"></script>
         <script src="{{ asset('/js/app_particles.js') }}"></script>
+        <script src="{{ asset('/js/app_particles_success.js') }}"></script>
         <script>
 
         </script>

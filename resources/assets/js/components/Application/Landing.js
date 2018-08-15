@@ -9,7 +9,7 @@ export default class Landing extends Component {
     this.state = {articles: [], toggler: false}
   }
   componentDidMount(){
-    axios.get('http://localhost:8000/api/articles/')
+    axios.get('http://8-24.ch/api/articles/')
       .then( (response) => {
         console.log(response);
         this.setState({articles: response.data});
@@ -35,13 +35,15 @@ export default class Landing extends Component {
     return items;
   }
   handleToggler(){
-    var stateT = true;
-    this.setState({toggler: stateT});
+    this.setState({toggler: true});
+  }
+  handleOutLanding(){
+    this.setState({toggler: false});
   }
   render() {
     return (
       <div className="container">
-        <section id="game__CTA">
+        <section id="game__CTA" onMouseLeave={this.handleOutLanding.bind(this)}>
           <div id="particles-js"></div>
           <div id="main">
             <div className="block-text">
@@ -51,7 +53,7 @@ export default class Landing extends Component {
               </h5>
               <div id="landing-form-interact">
                 <div onMouseEnter={this.handleToggler.bind(this)} class="btn-commencer">
-                  <span id="landing-focus-text">Jouer maintenant</span>
+                  <span id="landing-focus-text" onClick={this.handleToggler.bind(this)}>Jouer maintenant</span>
                 </div>
               </div>
               <div className="scroll-downs">
@@ -61,7 +63,9 @@ export default class Landing extends Component {
               </div>
             </div>
           </div>
-          <Game toggler={this.state.toggler} />
+          <div onMouseEnter={this.handleToggler.bind(this)}>
+            <Game toggler={this.state.toggler}  />
+          </div>
         </section>
         <div className="row justify-content-center" id="conversations__list">
           <Conversations />

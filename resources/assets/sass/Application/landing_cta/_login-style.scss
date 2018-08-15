@@ -27,7 +27,10 @@ input.field-login{
   color: white;
   font-weight: lighter;
   outline: none;
-
+  &:placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
 }
 
 input.btn-login-send {
@@ -55,7 +58,7 @@ input.btn-login-send {
   }
 }
   .select__domain{
-    width: 100%;
+    width: 101%;
     float: left;
     color: white;
     background: transparent;
@@ -63,6 +66,7 @@ input.btn-login-send {
     border-radius: 5px;
     padding-top: 11px;
     padding-bottom: 11px;
+    height: 33px;
   }
 .avatar{
   width: 100%;

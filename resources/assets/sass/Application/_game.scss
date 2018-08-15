@@ -4,14 +4,16 @@
   display: grid;
   overflow: hidden;
   grid-template-columns: repeat(12, 1fr);
-  column-gap: 30px;
+  grid-template-rows: repeat(12, calc(100vh/12));
   .header{
     grid-column-start: 0;
     grid-column-end: span 12;
-    height: 20vh;
+    //height: 20vh;
     display: grid;
     float: left;
     grid-template-columns: repeat(12, 1fr);
+    grid-row-start: 1;
+    grid-row-end: span 2;
     column-gap: 30px;
     color: black;
     background: #614fc6;
@@ -32,12 +34,24 @@
       grid-column-end: span 8;
       display: grid;
       grid-template-columns: repeat(8, 1fr);
+      .user__picto{
+        width: 70%;
+        height: 80%;
+        margin: auto;
+        background: url("../../../../public/images/avatar.svg") no-repeat;
+        background-size: 100%;
+      }
       .username__domaine{
-        grid-column-start: 1;
+        grid-column-start: 2;
         grid-column-end: span 2;
         color: white;
+        height: 80%;
+        margin-top: 10%;
         .username{
           font-size: 24px;
+        }
+        .domaine{
+          color: white;
         }
       }
       .user__subscribes{
@@ -46,20 +60,22 @@
         color: white;
       }
       .user__followers{
-        grid-column-start: 8;
-        grid-column-end: span 2;
+        grid-column-start: 7;
+        grid-column-end: span 3;
+        display: flex;
+        align-items: center;
+        height: 60%;
+        margin-top: 20%;
         .followers_nb{
-          font-size: 28px;
+          font-size: 48px;
           float: left;
           width: 50%;
-          height: 100%;
           color: black;
         }
         .followers_abos{
           float: left;
           width: 50%;
-          height: 100%;
-          color: black;
+          color: white;
         }
       }
       span{
@@ -76,16 +92,30 @@
     background: #f1f1f1;
     grid-column-start: 0;
     grid-column-end: span 12;
-    height: 78vh;
+    grid-row-start: 3;
+    grid-row-end: span 10;
+    height: 100%;
     display: grid;
     float: left;
     grid-template-columns: repeat(12, 1fr);
-    column-gap: 30px;
-    padding-top: 2vh;
-    .question__wrap{
+    -webkit-column-gap: 30px;
+    #game__link__home{
       grid-column-start: 2;
-      grid-column-end: span 5;
+      grid-column-end: span 1;
+      margin-top: calc( (100vh/12) * 4);
+      .left__arrow{
+        display: block;
+        height: 100%;
+        width:30px;
+        background-size: 100%;
+        background: url("../../../../public/images/left-arrow.svg") no-repeat;
+      }
+    }
+    .question__wrap{
+      grid-column-start: 3;
+      grid-column-end: span 4;
       height: 80vh;
+      margin-top: calc( (100vh/12));
       .question__image{
         width: 100%;
         height: 30vh;
@@ -98,13 +128,24 @@
         font-size: 24px;
         margin-top: 10px;
       }
+      .trait__numerotation{
+        width: 21px;
+        height: 1px;
+        background: black;
+        margin-top: 14px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding-bottom: 2px;
+        display: block;
+        float: left;
+      }
     }
     .response__wrap{
-      grid-column-start: 7;
-      grid-column-end: span 5;
-      padding-top: 20vh;
+      grid-column-start: 8;
+      grid-column-end: span 4;
+      padding-top: calc(100vh/12);
       padding-bottom: 20vh;
-      height: 40vh;
+      height: auto;
       .responses__list{
         .responses__list__item{
           margin: 2vh;
@@ -117,14 +158,32 @@
             float: left;
             font-size: 24px;
             margin-bottom: 10px;
+            .trait__numerotation{
+              width: 21px;
+              height: 1px;
+              background: black;
+              margin-top: 14px;
+              margin-left: 5px;
+              padding-bottom: 2px;
+              display: block;
+              float: left;
+            }
+            .number__numerotation{
+              width: auto;
+              height: auto;
+              float: left;
+            }
           }
           .response__content{
             width: 100%;
             height: auto;
             float: left;
-          }
-          &:hover{
-            cursor: pointer;
+            padding: 3px;
+            &:hover{
+              border-radius: 5px;
+              cursor: pointer;
+              background: white;
+            }
           }
         }
       }
@@ -132,27 +191,29 @@
 
   }
   .response__modal{
-    display: block;
-    width: 70vw;
-    height: 50vh;
-    padding: 5%;
-    height: 40vh;
-    background: #614fc6;
-    color: white;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat( 12, calc(60vh/ 12) );
     position: absolute;
     z-index: 3;
+    width: 100vw;
+    height: 60vh;
+    padding: 5%;
+    background: #f1f1f1;
+    color: #060a27;
+    border-radius: 50px;
     &.hidden{
-      opacity: 0;
-      display: none;
+      opacity: 0.7;
       top: 100vh;
-      left: 30vh;
-      transition: 200ms;
+      left: calc(100vw/12);
+      transition: 100ms;
+      display: none;
     }
     &.active{
       opacity: 1;
-      left: 15vw;
-      top: 30vh;
-      transition: 500ms;
+      left: calc( 100vw/12 );
+      top: calc( (100vh/12) * 2);
+      transition: 300ms;
     }
     h4{
       width: 100%;
@@ -160,11 +221,40 @@
       margin-bottom: 8px;
       font-size: 20px;
       float: left;
+      color: #614fc6;
+      grid-column-start: 2;
+      grid-column-end: span 2;
+      grid-row-start: 3;
+      grid-row-end: span 1;
     }
+    .explication__wrap{
+      grid-column-start: 2;
+      grid-column-end: span 6;
+      grid-row-start: 5;
+      grid-row-end: span 8;
+      display: block;
+    }
+    .result__game{
+      grid-column-start: 2;
+      grid-column-end: span 6;
+      grid-row-start: 5;
+      grid-row-end: span 8;
+      display: block;
+    }
+
     p{
       width: 100%;
       height: auto;
       float: left;
+    }
+  }
+  .final__modal{
+    .final__game__link__home{
+      grid-column-start: 2;
+      grid-column-end: span 6;
+      grid-row-start: 10;
+      grid-row-end: span 1;
+      font-size: 28px;
     }
   }
   #message__success{
@@ -186,7 +276,7 @@
     width: 100vw;
     height: 80vh;
     position: fixed;
-    top: 10vh;
+    top: 20vh;
     left: 0;
     background:#f1f1f1;
     &.hidden{
@@ -205,21 +295,18 @@
   }
   #next-question__CTA{
     display: block;
-    position: relative;
-    float: left;
-    width: 60px;
-    height: 2px;
-    padding: 20px;
-    color: white;
-    border-radius: 5px;
-    border: 1px solid white;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    vertical-align: middle;
-    text-align: center;
+    width: 40px;
+    height: 100%;
+    background-size: 100%;
+    background: url("../../../../public/images/left-arrow.svg") no-repeat;
+    transform: rotate(180deg);
+    grid-column-start: 9;
+    grid-column-end: span 1;
+    grid-row-start: 6;
+
     &:hover{
       cursor: pointer;
     }
   }
+
 }

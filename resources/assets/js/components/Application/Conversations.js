@@ -7,7 +7,7 @@ export default class Conversations extends Component {
     this.state = {conversations: []}
   }
   componentDidMount(){
-    axios.get('http://localhost:8000/api/conversation/')
+    axios.get('http://8-24.ch/api/conversation/')
       .then( (response) => {
         console.log(response);
         this.setState({conversations: response.data})

@@ -11,7 +11,8 @@
 
 /* Otherwise just put the config content (json): */
 
-particlesJS('particles-js',
+particlesJS('particles-js-success',
+
   {
     "particles": {
       "number": {
@@ -22,7 +23,7 @@ particlesJS('particles-js',
         }
       },
       "color": {
-        "value": "#cb65ea"
+        "value": "#c138ea"
       },
       "shape": {
         "type": "circle",
@@ -63,7 +64,7 @@ particlesJS('particles-js',
         "enable": true,
         "distance": 150,
         "color": "#ffffff",
-        "opacity": 0.2,
+        "opacity": 0.4,
         "width": 1
       },
       "move": {
@@ -97,15 +98,15 @@ particlesJS('particles-js',
         "grab": {
           "distance": 400,
           "line_linked": {
-            "opacity": 0.5
+            "opacity": 1
           }
         },
         "bubble": {
           "distance": 400,
           "size": 40,
           "duration": 2,
-          "opacity": 4,
-          "speed": 2
+          "opacity": 8,
+          "speed": 3
         },
         "repulse": {
           "distance": 200

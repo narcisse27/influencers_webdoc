@@ -1,5 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700');
 
-body,p,h1,h2,h3,h4,h5{
+body,p,h2,h3,h4,h5{
   font-family: 'Roboto', sans-serif;
+}
+h1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
 }

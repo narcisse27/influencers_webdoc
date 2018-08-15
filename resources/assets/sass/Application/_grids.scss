@@ -5,8 +5,7 @@ $columnsGap: 13px;
   height: auto;
   float: left;
   display: grid;
-  grid-template-columns: 30px repeat(12, 1fr) 30px;
-  column-gap: $columnsGap;
+  grid-template-columns: repeat(12, 1fr);
   .article__cover{
     grid-column-start: 1;
     grid-column-end: span 14;
@@ -39,16 +38,33 @@ $columnsGap: 13px;
       color: white;
     }
   }
+  .article__mini__bloc__columns{
+    &:nth-child(even){ // pair
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+      column-gap: $columnsGap;
+
+    }
+    &:nth-child(odd){ // impair
+      -webkit-column-count: 1;
+      -moz-column-count: 1;
+      column-count: 1;
+      column-gap: $columnsGap;
+    }
+  }
   .article__content__base{
     display: block;
     height: auto;
     float: left;
     margin-bottom: 10vh;
     text-align: left;
+    /*
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
     column-gap: $columnsGap;
+    */
     h4{
       text-style: bold;
       font-size: 16px;
@@ -69,6 +85,7 @@ $columnsGap: 13px;
       margin-bottom: 18px;
     }
   }
+
   &:nth-child(even){ // pair
     .article__title{
       @extend .article__title__base;
@@ -79,6 +96,19 @@ $columnsGap: 13px;
       @extend .article__content__base;
       grid-column-start: 6;
       grid-column-end: span 8;
+      &:nth-child(even){ // pair
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        column-gap: $columnsGap;
+
+      }
+      &:nth-child(odd){ // impair
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        column-gap: $columnsGap;
+      }
     }
   }
   &:nth-child(odd){ // impair
@@ -91,6 +121,21 @@ $columnsGap: 13px;
       @extend .article__content__base;
       grid-column-start: 2;
       grid-column-end: span 8;
+      .articles__mini__bloc{
+        &:nth-child(even){ // pair
+          -webkit-column-count: 2;
+          -moz-column-count: 2;
+          column-count: 2;
+          column-gap: $columnsGap;
+
+        }
+        &:nth-child(odd){ // impair
+          -webkit-column-count: 1;
+          -moz-column-count: 1;
+          column-count: 1;
+          column-gap: $columnsGap;
+        }
+      }
     }
   }
 

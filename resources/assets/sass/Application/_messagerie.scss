@@ -8,8 +8,8 @@
   background: $backgroundColor;
   #left__aside{
     display: block;
-    grid-column-start: 0;
-    grid-column-end: span 3;
+    grid-column-start: 1;
+    grid-column-end: span 2;
     height: 100vh;
     .trait{
       width: 2px;
@@ -88,7 +88,7 @@
   }
   #right__aside{
     display: flex;
-    grid-column-start: 4;
+    grid-column-start: 3;
     grid-column-end: span 10;
     height: 100vh;
     .conversation__card{

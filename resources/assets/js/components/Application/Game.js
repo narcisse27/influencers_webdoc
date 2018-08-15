@@ -6,7 +6,7 @@ class Game extends Component{
     this.state = {username: '', questionnaire_slug: '', questionnaires: []}
   }
   componentDidMount(){
-    axios.get('http://localhost:8000/api/questionnaires/')
+    axios.get('http://8-24.ch/api/questionnaires/')
       .then( (response) => {
         console.log(response);
         this.setState({questionnaires: response.data, questionnaire_slug: response.data[0].slug});
@@ -41,11 +41,11 @@ class Game extends Component{
         <h2>La règle est simple ...</h2>
         <p id="rules-text">Ce jeu vous permettra de déterminer une stratégie pour vous lancer en tant qu’influenceur. Parmi les réponses certaines vous feront gagner des abonnés, d’autres peuvent vous en faire perdre. Vous allez devoir faire les bons choix. A vous de jouer !</p>
         <div className="avatar"></div>
-        <input className="field-login" type="text" onKeyUp={this.handleUserName.bind(this)} />
+        <input className="field-login" type="text" onKeyUp={this.handleUserName.bind(this)} placeholder="Inscrivez votre nom" />
         <select className="select__domain" onChange={this.handleQuestionnairesList.bind(this)}>
           {this.renderQuestionnairesList()}
         </select>
-        <Link className="" id="landing-focus-text" to={'/game/' + this.state.questionnaire_slug + '/' + this.state.username}>Go !</Link>
+        <Link className="" id="go__to__play" to={'/game/' + this.state.questionnaire_slug + '/' + this.state.username}>Go !</Link>
       </div>
     )
   }

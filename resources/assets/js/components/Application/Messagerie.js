@@ -46,7 +46,7 @@ class Messagerie extends Component{
     this.setState({count: (this.state.count + 0.1), messagesToShow: itemsToShow});
   }
   componentDidMount(){
-    axios.get('http://localhost:8000/api/conversation/' + this.props.match.params.slug)
+    axios.get('http://8-24.ch/api/conversation/' + this.props.match.params.slug)
       .then( (response) => {
         console.log(response);
         this.setState({conversation: response.data})
