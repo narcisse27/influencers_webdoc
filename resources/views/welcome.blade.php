@@ -9,11 +9,9 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
             <div class="content">
                 <div id="example"></div>
             </div>
-        </div>
 
         <script src="{{ asset('/js/app.js') }}"></script>
         <script src="{{ asset('/js/particles.min.js') }}"></script>

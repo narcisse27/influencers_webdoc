@@ -1,5 +1,4 @@
 @import "variables";
-div {
   .btn-commencer {
     font-size: 1.5em;
     text-decoration: none;
@@ -25,7 +24,6 @@ div {
       margin-left: 0%;
     }
   }
-}
 @keyframes btnDisapear {
   0%{
     opacity: 1;

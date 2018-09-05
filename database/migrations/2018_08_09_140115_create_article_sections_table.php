@@ -18,7 +18,7 @@ class CreateArticleSectionsTable extends Migration
             $table->string('title');
             $table->integer('order');
             $table->string('cover');
-            $table->text('accroche');
+            $table->text('accroche')->nullable();
             $table->longText('content');
             $table->timestamps();
         });

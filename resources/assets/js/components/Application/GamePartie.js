@@ -18,7 +18,8 @@ class GamePartie extends Component{
     }
   }
   componentDidMount(){
-    axios.get('http://8-24.ch/api/questionnaire/' + this.props.match.params.slug)
+    //axios.get('http://8-24.ch/api/questionnaire/' + this.props.match.params.slug)
+    axios.get('http://localhost:8000/api/questionnaire/lifestyle-de-luxe/')
       .then( (response) => {
         console.log(response);
         this.setState({questionnaire: response.data, events: response.data.timeline.events});

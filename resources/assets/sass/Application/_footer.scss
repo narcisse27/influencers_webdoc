@@ -1,0 +1,60 @@
+.footer{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  float: left;
+  width: 100vw;
+  height: 80px;
+  min-height: 10vh;
+  background:#1d1435;
+  color: white;
+  .arc__info{
+    grid-column-start: 2;
+    grid-column-end: span 3;
+    height: auto;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text{
+      width: auto;
+      display: flex;
+      align-self: center;
+      white-space: nowrap;
+      opacity: 0.7;
+      margin-top: 13px;
+    }
+    img{
+      width: 50%;
+      margin-left: 7%;
+      height: auto;
+      mix-blend-mode: screen;
+      display: flex;
+      align-self: center;
+    }
+  }
+  .oye{
+    grid-column-start: 8;
+    grid-column-end: span 3;
+    height: auto;
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .text{
+      width: auto;
+      display: flex;
+      align-self: center;
+      white-space: nowrap;
+      opacity: 0.7;
+      margin-top: 13px;
+    }
+    img{
+      width: 25%;
+      margin-left: 7%;
+      height: auto;
+      mix-blend-mode: screen;
+      display: flex;
+      align-self: center;
+    }
+  }
+}

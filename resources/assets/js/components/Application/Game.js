@@ -6,7 +6,7 @@ class Game extends Component{
     this.state = {username: '', questionnaire_slug: '', questionnaires: []}
   }
   componentDidMount(){
-    axios.get('http://8-24.ch/api/questionnaires/')
+    axios.get('http://localhost:8000/api/questionnaires/')
       .then( (response) => {
         console.log(response);
         this.setState({questionnaires: response.data, questionnaire_slug: response.data[0].slug});
@@ -37,15 +37,16 @@ class Game extends Component{
 
   render(){
     return(
-      <div id="block-login" className={(this.props.toggler ? 'active' : 'hidden')} >
-        <h2>La règle est simple ...</h2>
-        <p id="rules-text">Ce jeu vous permettra de déterminer une stratégie pour vous lancer en tant qu’influenceur. Parmi les réponses certaines vous feront gagner des abonnés, d’autres peuvent vous en faire perdre. Vous allez devoir faire les bons choix. A vous de jouer !</p>
-        <div className="avatar"></div>
-        <input className="field-login" type="text" onKeyUp={this.handleUserName.bind(this)} placeholder="Inscrivez votre nom" />
-        <select className="select__domain" onChange={this.handleQuestionnairesList.bind(this)}>
-          {this.renderQuestionnairesList()}
-        </select>
-        <Link className="" id="go__to__play" to={'/game/' + this.state.questionnaire_slug + '/' + this.state.username}>Go !</Link>
+      <div id="block-login">
+        <div className="game__image">
+          <img src="/img/photos/game_cta.png" alt="jeu image" />
+        </div>
+        <div className="content">
+          <h2>Testez vos talents d'influenceurs</h2>
+          <input className="field-login" type="text" onKeyUp={this.handleUserName.bind(this)} placeholder="Inscrivez votre nom" />
+          <Link className="" id="go__to__play" to={'/game/' + 'beaute-naturelle' + '/' + this.state.username}>Jouer !</Link>
+          <p id="rules-text">Ce jeu vous permettra de déterminer une stratégie pour vous lancer en tant qu’influenceur. Parmi les réponses certaines vous feront gagner des abonnés, d’autres peuvent vous en faire perdre. Vous allez devoir faire les bons choix. A vous de jouer !</p>
+        </div>
       </div>
     )
   }

@@ -7,10 +7,15 @@
   float: left;
   background: $backgroundColor;
   #left__aside{
-    display: block;
-    grid-column-start: 1;
-    grid-column-end: span 2;
-    height: 100vh;
+    @media screen and (max-width: 300px){
+      display: none;
+    }
+    @media screen and (max-width: 700px){
+      display: block;
+      grid-column-start: 1;
+      grid-column-end: span 2;
+      height: 100vh;
+    }
     .trait{
       width: 2px;
       height: 20%;

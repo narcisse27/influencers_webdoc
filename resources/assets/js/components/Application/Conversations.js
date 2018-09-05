@@ -7,7 +7,7 @@ export default class Conversations extends Component {
     this.state = {conversations: []}
   }
   componentDidMount(){
-    axios.get('http://8-24.ch/api/conversation/')
+    axios.get('http://localhost:8000/api/conversation/')
       .then( (response) => {
         console.log(response);
         this.setState({conversations: response.data})
@@ -39,7 +39,8 @@ export default class Conversations extends Component {
               <h3 className="color-white">{item.destinataire_info}</h3>
             </div>
             <div className="user_followers">
-              <h3><div className="heart"></div> {item.destinataire_followers} K</h3>
+              <span class="user_followers_nb">{item.destinataire_followers} K</span>
+                <span className="heart"></span>
               <h4>Followers</h4>
             </div>
             <div className="user_network_links">

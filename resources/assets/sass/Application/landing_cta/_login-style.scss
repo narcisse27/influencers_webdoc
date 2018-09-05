@@ -10,29 +10,28 @@ form#form-login{
   padding-left: $pad-form-left;
   padding-right: $pad-form-right;
   margin-top: 20px;
-
 }
-
 input.field-login{
-  width: 80%;
-  padding-left: 10%;
-  padding-right: 10%;
-  border: 2px solid white;
-  border-radius: 5px;
+  width: 60%;
+  padding-left: 5%;
+  padding-right: 5%;
   padding-top: 11px;
   padding-bottom: 11px;
+  border: 2px solid #dbdbdb;
+  border-radius: 0px;
   margin-top: 9px;
   margin-bottom: 18px;
-  background-color: unset;
-  color: white;
+  color: black;
+  background: #f8f8f8;
   font-weight: lighter;
   outline: none;
+  display: block;
+  float: left;
   &:placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: white;
     opacity: 1; /* Firefox */
   }
 }
-
 input.btn-login-send {
   border: 2px solid white;
   border-radius: 5px;
@@ -76,7 +75,6 @@ input.btn-login-send {
   background-repeat: no-repeat;
   background-size: 100px;
   background-position: center;
-
 }
 
 
